@@ -1,75 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Athithya Fitness</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athithya Fitness · Clean UI</title>
+    <!-- main stylesheet (external) -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome 5 (optional but used in design) -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 </head>
 <body>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>
-        SCIENCE & NUTRITION BASED TRAINING.<br>
-        TRANSFORM WITH <span>ATHITHYA</span>
-      </h1>
-      <p>4+ Years of Professional Coaching Experience</p>
-      <a href="#apply" class="btn">APPLY FOR COACHING</a>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services">
     <div class="card">
-      <div class="icon">🥗</div>
-      <h3>Customized Diet Plans</h3>
+        <!-- hero / top section -->
+        <div class="hero">
+            <h1># STAY DISCIPLINED. <span>TRANSFORM WITH ATHITHYA.</span></h1>
+            <div class="hero-badge">
+                <i class="fas fa-calendar-check"></i> 4+ Years of Professional Coaching Experience
+            </div>
+
+            <!-- apply button (top) -->
+            <div class="apply-btn-top">
+                <a href="#form-section">APPLY FOR COACHING</a>
+            </div>
+
+            <!-- feature pills -->
+            <div class="features-grid">
+                <div class="feature-item"><i class="fas fa-apple-alt"></i> Customized Diet Plans</div>
+                <div class="feature-item"><i class="fas fa-dumbbell"></i> Science-Based Nutrition Training</div>
+                <div class="feature-item"><i class="fas fa-user-friends"></i> 1-on-1 Personal Coaching</div>
+            </div>
+        </div>
+
+        <!-- form area (exactly as described) -->
+        <div class="form-container" id="form-section">
+            <h2 class="form-title">Client Application</h2>
+            <div class="form-sub">Serious applicants only</div>
+
+            <form id="coachingForm">
+                <div class="form-grid">
+                    <div class="input-group full-width">
+                        <label><i class="fas fa-user"></i> Full Name *</label>
+                        <input type="text" name="fullName" placeholder="e.g. Alex Morgan" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fas fa-calendar-alt"></i> Age *</label>
+                        <input type="number" name="age" placeholder="25" min="15" max="100" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fas fa-ruler-vertical"></i> Height (cm) *</label>
+                        <input type="number" name="height" placeholder="175" step="0.1" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fas fa-weight-scale"></i> Weight (kg) *</label>
+                        <input type="number" name="weight" placeholder="72.5" step="0.1" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fas fa-bullseye"></i> Select Goal *</label>
+                        <select name="goal" required>
+                            <option value="" disabled selected>— choose your goal —</option>
+                            <option value="fat-loss">Fat loss</option>
+                            <option value="muscle-gain">Muscle gain</option>
+                            <option value="toning">Toning / recomp</option>
+                            <option value="endurance">Endurance / athletic</option>
+                            <option value="maintenance">Maintenance & health</option>
+                        </select>
+                    </div>
+
+                    <!-- What is stopping you? (full width) -->
+                    <div class="input-group full-width">
+                        <label><i class="fas fa-ban"></i> What is stopping you? *</label>
+                        <textarea name="obstacle" placeholder="Your biggest hurdle right now..." required></textarea>
+                    </div>
+                </div>
+
+                <!-- READY TO TRANSFORM button (exact copy) -->
+                <button type="submit" class="ready-btn">READY TO TRANSFORM</button>
+
+                <!-- hidden field for success message ID (as per design) -->
+                <div id="successMsg" style="height:0; overflow:hidden; visibility:hidden;">ID successMsg</div>
+            </form>
+
+            <!-- copyright footer -->
+            <div class="footer-note">
+                © 2026 Athithya Fitness
+            </div>
+        </div>
     </div>
 
-    <div class="card">
-      <div class="icon">🧪</div>
-      <h3>Science-Based Nutrition Training</h3>
-    </div>
-
-    <div class="card">
-      <div class="icon">👤</div>
-      <h3>1-on-1 Personal Coaching</h3>
-    </div>
-  </section>
-
-  <!-- APPLICATION FORM -->
-  <section id="apply" class="application">
-    <h2>Client Application</h2>
-    <p>Serious applicants only</p>
-
-    <form action="https://formspree.io/f/xykdjwea" method="POST">
-
-  <input type="hidden" name="_captcha" value="false">
-
-  <input type="text" name="name" placeholder="Full Name *" required>
-  <input type="number" name="age" placeholder="Age *" required>
-  <input type="number" name="height" placeholder="Height (cm) *" required>
-  <input type="number" name="weight" placeholder="Weight (kg) *" required>
-
-  <select name="goal" required>
-    <option value="">Select Goal *</option>
-    <option>Weight Loss</option>
-    <option>Muscle Gain</option>
-  </select>
-
-  <textarea name="challenges" required></textarea>
-
-  <button type="submit">READY TO TRANSFORM</button>
-
-</form>
-
-  </section>
-
-  <footer>
-    © 2026 Athithya Fitness
-  </footer>
-
-  <script src="script.js"></script>
+    <!-- external javascript -->
+    <script src="script.js"></script>
 </body>
 </html>
